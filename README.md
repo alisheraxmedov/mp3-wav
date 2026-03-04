@@ -1,4 +1,4 @@
-# Antigravity Audio
+# MP3 WAV Converter
 
 Production-ready CLI tool for converting MP3 files to high-quality WAV using FFmpeg.
 
@@ -57,14 +57,14 @@ cd mp3-wav
 uv sync
 
 # Verify
-uv run antigravity-audio --help
+uv run mp3-wav --help
 ```
 
 ### Docker
 
 ```bash
-docker build -t antigravity-audio .
-docker run --rm antigravity-audio --help
+docker build -t mp3-wav .
+docker run --rm mp3-wav --help
 ```
 
 ## Configuration
@@ -90,7 +90,7 @@ cp .env.example .env
 ### Convert Explicit Files
 
 ```bash
-uv run antigravity-audio convert \
+uv run mp3-wav convert \
   --files /path/to/song1.mp3 /path/to/song2.mp3 \
   --output-dir ./output
 ```
@@ -98,7 +98,7 @@ uv run antigravity-audio convert \
 ### Convert All MP3s in a Directory
 
 ```bash
-uv run antigravity-audio convert \
+uv run mp3-wav convert \
   --input-dir ./music \
   --output-dir ./wav-output
 ```
@@ -106,7 +106,7 @@ uv run antigravity-audio convert \
 ### With Options
 
 ```bash
-uv run antigravity-audio convert \
+uv run mp3-wav convert \
   --input-dir ./music \
   --output-dir ./output \
   --workers 8 \
@@ -118,7 +118,7 @@ uv run antigravity-audio convert \
 ### Non-Recursive Scan
 
 ```bash
-uv run antigravity-audio convert \
+uv run mp3-wav convert \
   --input-dir ./music \
   --output-dir ./output \
   --no-recursive
@@ -127,7 +127,7 @@ uv run antigravity-audio convert \
 ### Check Tool Info
 
 ```bash
-uv run antigravity-audio info
+uv run mp3-wav info
 ```
 
 ### Docker Usage
@@ -137,7 +137,7 @@ uv run antigravity-audio info
 docker run --rm \
   -v /host/music:/app/input \
   -v /host/output:/app/output \
-  antigravity-audio convert \
+  mp3-wav convert \
   --input-dir /app/input \
   --output-dir /app/output
 

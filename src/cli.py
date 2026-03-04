@@ -10,7 +10,7 @@ from services.converter_service import convert_batch
 from services.discovery_service import discover_files, validate_file_paths
 
 app = typer.Typer(
-    name="antigravity-audio",
+    name="mp3-wav",
     help="Production-ready CLI tool for converting MP3 files to high-quality WAV using FFmpeg.",
     add_completion=False,
     no_args_is_help=True,
@@ -100,7 +100,7 @@ def convert(
     else:
         typer.echo(
             "Error: Provide either --files or --input-dir.\n"
-            "Run 'antigravity-audio convert --help' for usage.",
+            "Run 'mp3-wav convert --help' for usage.",
             err=True,
         )
         raise typer.Exit(code=1)
@@ -133,7 +133,7 @@ def info() -> None:
     """Show tool information and FFmpeg availability."""
     from __init__ import __version__
 
-    typer.echo(f"antigravity-audio v{__version__}")
+    typer.echo(f"mp3-wav v{__version__}")
     typer.echo(f"FFmpeg available: {FFmpegAdapter.is_available()}")
 
 

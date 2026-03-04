@@ -1,12 +1,12 @@
 [project]
-name = "antigravity-audio"
+name = "mp3-wav"
 version = "1.0.0"
 description = "Production-ready CLI tool for converting MP3 files to high-quality WAV using FFmpeg"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [
-    { name = "Antigravity Audio Team" },
+    { name = "Alisher Akhmedov" },
 ]
 dependencies = [
     "typer[all]>=0.9.0",

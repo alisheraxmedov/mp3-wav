@@ -12,11 +12,11 @@ def setup_logging(level: str = "INFO") -> None:
     handler = logging.StreamHandler(sys.stdout)
     handler.setFormatter(formatter)
 
-    root_logger = logging.getLogger("antigravity_audio")
+    root_logger = logging.getLogger("mp3_wav")
     root_logger.setLevel(log_level)
     root_logger.handlers.clear()
     root_logger.addHandler(handler)
 
 
 def get_logger(name: str) -> logging.Logger:
-    return logging.getLogger(f"antigravity_audio.{name}")
+    return logging.getLogger(f"mp3_wav.{name}")
