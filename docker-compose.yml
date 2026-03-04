@@ -1,0 +1,9 @@
+services:
+  audio-converter:
+    build: .
+    volumes:
+      - ./audios/mp3:/app/audios/mp3
+      - ./audios/wav:/app/audios/wav
+    env_file:
+      - .env
+    command: ["convert", "--input-dir", "/app/audios/mp3", "--output-dir", "/app/audios/wav"]
