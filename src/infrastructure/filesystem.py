@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 
@@ -7,7 +8,8 @@ def ensure_directory(path: Path) -> Path:
 
 
 def build_output_path(source: Path, output_dir: Path) -> Path:
-    return output_dir / f"{source.stem}.wav"
+    new_stem = re.sub(r'\s+', '_', source.stem)
+    return output_dir / f"{new_stem}.wav"
 
 
 def file_exists(path: Path) -> bool:
