@@ -73,11 +73,11 @@ All settings can be configured via environment variables or a `.env` file.
 
 | Variable                | Default     | Description                         |
 |-------------------------|-------------|-------------------------------------|
-| `ANTIGRAVITY_INPUT_DIR` | `./audios/mp3`| Default input directory             |
-| `ANTIGRAVITY_OUTPUT_DIR`| `./audios/wav`| Default output directory            |
-| `ANTIGRAVITY_WORKERS`   | `CPU / 2`   | Number of concurrent workers        |
-| `ANTIGRAVITY_LOG_LEVEL` | `INFO`      | Logging level (DEBUG, INFO, etc.)   |
-| `ANTIGRAVITY_OVERWRITE` | `false`     | Overwrite existing WAV files        |
+| `MP3WAV_INPUT_DIR` | `./audios/mp3`| Default input directory             |
+| `MP3WAV_OUTPUT_DIR`| `./audios/wav`| Default output directory            |
+| `MP3WAV_WORKERS`   | `CPU / 2`   | Number of concurrent workers        |
+| `MP3WAV_LOG_LEVEL` | `INFO`      | Logging level (DEBUG, INFO, etc.)   |
+| `MP3WAV_OVERWRITE` | `false`     | Overwrite existing WAV files        |
 
 Copy `.env.example` to `.env` and edit as needed:
 

@@ -16,6 +16,3 @@ venv/
 *.mp3
 input/
 output/
-PLAN.md
-audios/mp3
-audios/wav
