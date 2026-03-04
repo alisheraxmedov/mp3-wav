@@ -132,17 +132,29 @@ uv run mp3-wav info
 
 ### Docker Usage
 
-```bash
-# Convert files using volume mounts
-docker run --rm \
-  -v /host/music:/app/input \
-  -v /host/output:/app/output \
-  mp3-wav convert \
-  --input-dir /app/input \
-  --output-dir /app/output
+The project is structured to make Docker usage extremely easy with predefined folders. 
 
-# With Docker Compose
+**How it works:**
+1. Put your `.mp3` files inside the `audios/mp3` folder on your computer.
+2. Run Docker Compose.
+3. The converted `.wav` files will automatically appear inside the `audios/wav` folder on your computer.
+
+This works because `docker-compose.yml` mounts these folders directly into the container.
+
+```bash
+# Just run this command - it handles everything!
 docker compose up
+```
+
+If you prefer to run the standalone Docker command without compose, map your folders manually:
+
+```bash
+docker run --rm \
+  -v ./audios/mp3:/app/audios/mp3 \
+  -v ./audios/wav:/app/audios/wav \
+  mp3-wav convert \
+  --input-dir /app/audios/mp3 \
+  --output-dir /app/audios/wav
 ```
 
 ## Audio Quality Notes
